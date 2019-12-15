@@ -33,7 +33,6 @@
                         @if ( Session::get('roles') == '1' )
                           <li><a href="{{ url('user') }}"><i class="fa fa-user"></i> User</a></li>
                           <li><a href="{{ url('role') }}"><i class="fa fa-users"></i> Roles</a></li>
-                          <li><a href="{{ url('category') }}"><i class="fa fa-list"></i> Category</a></li>
                         @endif
                     </ul>
                   </li>
