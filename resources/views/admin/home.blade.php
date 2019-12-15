@@ -32,24 +32,16 @@
                                         <tr>
                                             <th>
                                                 <div>
-                                                    <p class="">Category</p>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div>
                                                     <p class="">Amount</p>
                                                 </div>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if(!empty($expensesData))
-                                        @foreach($expensesData as $expenses)
+                                        @if(!empty($amountData))
+                                        @foreach($amountData as $amount)
                                         <tr>
-                                            <td>
-                                                <p><i class="fa fa-square blue" id="{{ $expenses->category_name }}"></i> {{ $expenses->category_name }} </p>
-                                            </td>
-                                            <td>P {{ $expenses->amount }}</td>
+                                            <td>P {{ $amount->total }}</td>
                                         </tr>
                                         @endforeach
                                         @endif

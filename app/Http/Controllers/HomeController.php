@@ -25,7 +25,13 @@ class HomeController extends Controller
         ->orderBy('expenses.id', 'desc')
         ->where('expenses.users_id', Session::get('userid'))
         ->get();
+
+        $amountData = DB::table('expenses')
+        ->select(DB::raw('sum(expenses.amount) as total'), 'expenses.category_id')
+        ->groupBy('expenses.category_id')
+        ->orderBy('expenses.id', 'desc')
+        ->get();
         
-        return view('admin/home', ["expensesData" => $expensesData, "categoryData" => $categoryData]);
+        return view('admin/home', ["expensesData" => $expensesData, "categoryData" => $categoryData, "amountData" => $amountData]);
     }
 }
