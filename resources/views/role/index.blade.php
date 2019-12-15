@@ -89,6 +89,12 @@ $( document ).ready(function() {
 
     $("#btn_add").on("click", function(e) {
         e.preventDefault();
+
+        if($("#description").val() == ""){
+            alert("Please check your inputs");
+            return;
+        }
+
         $.ajax({
             type: "POST",
             url: "{{ url('role/add') }}",
@@ -174,7 +180,12 @@ $( document ).ready(function() {
     });
 
     $("#btn_update").on("click", function(e) {
-        
+
+        if($("#description").val() == ""){
+            alert("Please check your inputs");
+            return;
+        }
+
         $.ajax({
             type: "POST",
             url: "{{ url('role/update') }}",

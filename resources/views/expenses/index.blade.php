@@ -134,6 +134,12 @@ $( document ).ready(function() {
     });
 
     $("#btn_add").on("click", function(e) {
+
+        if($("#amount").val() == "" || $("#category_id").val() == ""){
+            alert("Please check your inputs");
+            return;
+        }
+
         e.preventDefault();
         $.ajax({
             type: "POST",
@@ -224,6 +230,11 @@ $( document ).ready(function() {
     });
 
     $("#btn_update").on("click", function(e) {
+        
+        if($("#amount").val() == "" || $("#category_id").val() == ""){
+            alert("Please check your inputs");
+            return;
+        }
         
         $.ajax({
             type: "POST",

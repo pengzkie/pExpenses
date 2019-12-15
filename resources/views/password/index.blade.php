@@ -66,6 +66,11 @@
 
         $("#btn_update").on("click", function(e) {
 
+            if($("#name").val() == "" || $("#email").val() == "" || $("#password").val() == ""){
+                alert("Please check your inputs");
+                return;
+            }
+
             $.ajax({
                 type: "POST",
                 url: "{{ url('password/update') }}",

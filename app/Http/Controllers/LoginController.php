@@ -31,7 +31,7 @@ class LoginController extends Controller
         ->limit(1)
         ->get();
 
-        if(!$result){
+        if($result->count() < 1){
             return response()->json(["code" => "99", "message" => "Please check your credentials."]);
         }
         

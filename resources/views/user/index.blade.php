@@ -118,6 +118,12 @@
 
         $("#btn_add").on("click", function(e) {
             e.preventDefault();
+
+            if($("#name").val() == "" || $("#email").val() == "" || $("#password").val() == "" || $("#roles_id option:selected").val() == ""){
+                alert("Please check your inputs");
+                return;
+            }
+
             $.ajax({
                 type: "POST",
                 url: "{{ url('user/add') }}",
@@ -214,6 +220,11 @@
 
         $("#btn_update").on("click", function(e) {
 
+            if($("#name").val() == "" || $("#email").val() == "" || $("#password").val() == "" || $("#roles_id option:selected").val() == ""){
+                alert("Please check your inputs");
+                return;
+            }
+            
             $.ajax({
                 type: "POST",
                 url: "{{ url('user/update') }}",
