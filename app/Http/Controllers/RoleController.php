@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\UpdateRolesRequest;
 use App\Role;
+use Session;
 
 class RoleController extends Controller
 {
@@ -15,7 +16,7 @@ class RoleController extends Controller
         if(!Session::exists('userid')){
             return redirect('login');
         }
-        
+
         $roleData = DB::table('roles')
         ->select()
         ->orderBy('id', 'desc')
